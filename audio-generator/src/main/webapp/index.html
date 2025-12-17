@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Video → Audio Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header class="hero">
+        <h1 class="stylish-title">
+            <span class="title-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="g1" x1="0" x2="1">
+                            <stop offset="0" stop-color="#667eea"/>
+                            <stop offset="1" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="1" y="4" width="22" height="16" rx="2" stroke="url(#g1)" stroke-width="1.6" fill="rgba(102,126,234,0.06)"/>
+                    <path d="M10 8v8l6-4-6-4z" fill="url(#g1)"/>
+                </svg>
+            </span>
+            Video → Audio
+        </h1>
+        <p class="subtitle">Extract high-quality audio from your video files instantly</p>
+    </header>
+
+    <form id="uploadForm" class="upload-form">
+        <label class="file-input" id="fileInputLabel">
+            <input type="file" id="video" name="video" accept="video/*" required>
+            <span class="file-label" id="fileLabel">Choose a video file or drag & drop</span>
+        </label>
+
+        <div class="format-options">
+            <button type="button" class="format-btn active" data-format="mp3">MP3</button>
+            <button type="button" class="format-btn" data-format="wav">WAV</button>
+            <button type="button" class="format-btn" data-format="ogg">OGG</button>
+        </div>
+
+        <div class="controls">
+            <button id="convertBtn" type="submit">Convert to Audio</button>
+            <button id="clearBtn" type="button">Clear</button>
+        </div>
+    </form>
+
+    <div class="meta">
+        <div id="fileInfo" class="file-info"></div>
+        <div class="progress" id="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="status" class="status"></div>
+    </div>
+
+    <div id="download" class="download"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
